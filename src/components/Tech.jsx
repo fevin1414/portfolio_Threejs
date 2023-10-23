@@ -1,14 +1,17 @@
 import React from "react";
 import { styles } from "../styles";
-import { BallCanvas } from "./canvas";
-import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
+import { SectionWrapper } from "../hoc";
 import { useMediaQuery } from "react-responsive";
+import { BallCanvas } from "./canvas";
 
-// Create a custom Card component for mobile view
 const MobileTechCard = ({ technology }) => (
   <div className="w-28 h-28 p-4 bg-white rounded-lg shadow">
-    <BallCanvas icon={technology.icon} />
+    <img
+      src={technology.icon}
+      alt={technology.name}
+      className="w-full h-full"
+    />
   </div>
 );
 
