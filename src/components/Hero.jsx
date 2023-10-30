@@ -1,37 +1,47 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
 import TypingAnimation from "../animation/TypingAnimation";
-
+import ComputersCanvas from "./canvas/Computers";
 import StarsCanvas from "./canvas/Stars";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen mx-auto ">
-      <StarsCanvas />
-
+    <section className="relative w-full h-screen mx-auto flex sm:flex-row justify-between items-center">
+      <div className="absolute inset-0 z-0">
+        <StarsCanvas />
+      </div>
       <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`z-0 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 sm:gap-20`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
+        <div className="text-white">
+          <h1 className={`${styles.heroHeadText}`}>
             Hi, I'm <span className="text-[#915EFF]">Fevin</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I am a Full Stack Web Developer <br className="sm:block hidden" />
-            I<br className="sm:hidden" />{" "}
+          <p className={`${styles.heroSubText} mt-2`}>
+            I am a Full Stack Web Developer <br className="sm:block hidden" />I
+            <br className="sm:hidden" />{" "}
             <span style={{ display: "inline-block" }}></span>
-            <TypingAnimation text=" develop websites,develop android applications, creates 3d Videos, do photoshop,do video editing..." />
+            <TypingAnimation text=" develop websites, develop android applications, create 3d Videos, do photoshop, do video editing..." />
           </p>
         </div>
       </div>
 
-      <ComputersCanvas />
+      <ComputersCanvas
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+        }}
+      />
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
