@@ -1,7 +1,5 @@
 import {
   mobile,
-  backend,
-  creator,
   web,
   javascript,
   typescript,
@@ -23,6 +21,7 @@ import {
   jobit,
   tripguide,
   threejs,
+  content_creator,
 } from "../assets";
 
 export const navLinks = [
@@ -32,7 +31,7 @@ export const navLinks = [
   },
   {
     id: "work",
-    title: "Work",
+    title: "Works",
   },
   {
     id: "contact",
@@ -46,17 +45,13 @@ const services = [
     icon: web,
   },
   {
-    title: "Android App Developer",
+    title: "Mobile App Developer",
     icon: mobile,
-  },
-  {
-    title: "Frontend And Backend Developer",
-    icon: backend,
   },
 
   {
     title: "Content Creator",
-    icon: creator,
+    icon: content_creator,
   },
 ];
 
@@ -125,8 +120,7 @@ const experiences = [
       "Proficient in WordPress development with experience in customizing themes, creating custom plugins, and optimizing websites for performance and SEO.",
       "	Deep understanding of WordPress's core functionality and ecosystem, enabling efficient website management and enhancement.",
       "	Proven track record of successfully implementing website enhancements and optimizations to drive user engagement and improve user experience.",
-      "Knowledgeable in current web design and development best practices, staying up to date with emerging trends and technologies."
-      ,
+      "Knowledgeable in current web design and development best practices, staying up to date with emerging trends and technologies.",
     ],
   },
   {
@@ -139,7 +133,6 @@ const experiences = [
       "	Completed store opening and closing procedures and balanced tills",
       "	Responded to and resolved customer questions and concerns.",
       "	Helped store management meet standards of service and quality in daily operations.",
-
     ],
   },
   {
@@ -151,27 +144,22 @@ const experiences = [
     points: [
       "	Operated machining equipment safely with team of operators.",
       "Complied with company and OSHA safety rules and regulations",
-      	"Set up and ran machinery to produce exceptional products for industrial needs.",
+      "Set up and ran machinery to produce exceptional products for industrial needs.",
       "	Monitored machines during operation to detect sounds of malfunction or excessive vibration and adjusted machines to eliminate problems.",
-
-
     ],
   },
-
 ];
 
 const testimonials = [
   {
-    testimonial:
-      "I'm too lazy to do do this part I will do it later ",
-  }
+    testimonial: "I'm too lazy to do do this part I will do it later ",
+  },
 ];
 
 const projects = [
   {
     name: "Team AKBDA",
-    description:
-      "will do this later",
+    description: "will do this later",
     tags: [
       {
         name: "react",
@@ -191,8 +179,7 @@ const projects = [
   },
   {
     name: "Movies freak",
-    description:
-      "Too lazy too type",
+    description: "Too lazy too type",
     tags: [
       {
         name: "react",
@@ -212,8 +199,7 @@ const projects = [
   },
   {
     name: "Canadian Agri Tech",
-    description:
-      "Ongoing",
+    description: "Ongoing",
     tags: [
       {
         name: "nextjs",

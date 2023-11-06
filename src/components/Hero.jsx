@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import TypingAnimation from "../animation/TypingAnimation";
-import ComputersCanvas from "./canvas/Computers";
+import MeCanvas from "./canvas/MeCanvas";
 import StarsCanvas from "./canvas/Stars";
 
 const Hero = () => {
@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas
+      <MeCanvas
         style={{
           position: "fixed",
           top: 0,
