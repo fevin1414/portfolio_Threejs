@@ -53,7 +53,7 @@ const About = () => {
         technologies. With expertise in HTML, CSS, Java, SQL, JavaScript, PHP,
         Ruby, Ruby on Rails, Python, React, TypeScript, Docker, Cloud
         Computing,Next js,React Native and a range of frameworks including
-        Bootstrap, Three.js,Tailwind CSS.Material UI,Daisy UI, I am
+        Bootstrap, Three.js,Tailwind CSS.Material UI,Daisy UI,Wordpress ,I am
         well-equipped to bring your digital projects to life.
       </motion.p>
 
