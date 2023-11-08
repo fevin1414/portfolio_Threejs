@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { menu, close } from "../assets";
@@ -23,7 +22,12 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  const updatedNavLinks = navLinks.map((link) => {
+    if (link.title === "Projects") {
+      return { ...link, to: "/Works" };
+    }
+    return link;
+  });
   return (
     <nav
       className={`${
@@ -47,6 +51,7 @@ const Navbar = () => {
             <span className="sm:block hidden"> | fevinBiju</span>
           </p>
         </Link>
+
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
@@ -56,7 +61,11 @@ const Navbar = () => {
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              {link.title === "Projects" ? (
+                <Link to="/Works">Projects</Link>
+              ) : (
+                <a href={`#${link.id}`}>{link.title}</a>
+              )}
             </li>
           ))}
         </ul>
@@ -87,7 +96,7 @@ const Navbar = () => {
                     setActive(link.title);
                   }}
                 >
-                  <a href={`#${link.id}`}>{link.title}</a>
+                  <Link to={link.to}>{link.title}</Link>
                 </li>
               ))}
             </ul>
