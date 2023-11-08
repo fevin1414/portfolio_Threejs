@@ -7,6 +7,15 @@ import { Link } from "react-router-dom";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { logo } from "../assets";
+import { StarsCanvas } from "../components";
+
+const truncateDescription = (description) => {
+  const words = description.split(" ");
+  if (words.length > 25) {
+    return `${words.slice(0, 25).join(" ")}...`;
+  }
+  return description;
+};
 
 const ProjectCard = ({
   index,
@@ -16,6 +25,7 @@ const ProjectCard = ({
   image,
   source_code_link,
 }) => {
+  const truncatedDescription = truncateDescription(description);
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -49,7 +59,17 @@ const ProjectCard = ({
 
         <div className="mt-5">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <p className="mt-2 text-secondary text-[14px]">
+            {truncatedDescription}
+          </p>
+          {description.length > 25 && (
+            <Link
+              to={`/Myworks`}
+              className="text-blue-500 mt-2 text-secondary text-[14px] "
+            >
+              Know More
+            </Link>
+          )}
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -71,7 +91,10 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <div className="w-full flex justify-between items-center max-w-7xl mt-3 mx-auto">
+        <div className="absolute inset-0 z-0">
+          <StarsCanvas />
+        </div>
+        <div className="w-full fixed inset-0 z-5 justify-between items-center max-w-7xl mt-3 mx-auto ">
           <Link
             to="/"
             className="flex items-center gap-2"
@@ -81,33 +104,36 @@ const Works = () => {
             }}
           >
             <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-            <p className="text-white text-[18px] font-bold scursor-pointer flex ">
+            <p className="text-white text-[18px] font-bold cursor-pointer flex ">
               fevin &nbsp;
               <span className="sm:block hidden"> | fevinBiju</span>
             </p>
           </Link>
         </div>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <div className="w-full flex justify-center items-center mt-8">
+          <h2 className={`${styles.sectionHeadText}`}>My Works</h2>
+        </div>
       </motion.div>
 
-      <div className="w-full flex">
+      <div className="w-full flex justify-center items-center">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 text-secondary text-[17px] max-w-3xl mt-8 leading-[30px]"
         >
           Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          real-world examples of my work. Some of the projects is briefly
+          described with links to code repositories and live demos in it.To know
+          more about each projects click on them It reflects my ability to solve
+          complex problems, work with different technologies, and manage
+          projects effectively.
         </motion.p>
       </div>
-
-      <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
+      <div className="w-full flex justify-center items-center">
+        <div className="mt-20 flex  items-center flex-wrap gap-5">
+          {projects.map((project, index) => (
+            <ProjectCard key={`project-${index}`} index={index} {...project} />
+          ))}
+        </div>
       </div>
     </>
   );
