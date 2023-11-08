@@ -96,7 +96,11 @@ const Navbar = () => {
                     setActive(link.title);
                   }}
                 >
-                  <Link to={link.to}>{link.title}</Link>
+                  {link.title === "Projects" ? (
+                    <Link to={link.to}>{link.title}</Link>
+                  ) : (
+                    <a href={`#${link.id}`}>{link.title}</a>
+                  )}
                 </li>
               ))}
             </ul>
