@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { logo } from "../assets";
-import { StarsCanvas } from "../components";
+import projectNavbar from "../components/NavbarProjects";
+import { Navbar, StarsCanvas } from "../components";
+import NavbarProject from "../components/NavbarProjects";
 
 const truncateDescription = (description) => {
   const words = description.split(" ");
@@ -94,7 +96,7 @@ const Works = () => {
         <div className="absolute inset-0 z-0">
           <StarsCanvas />
         </div>
-        <div className="w-full fixed inset-0 z-5 justify-between items-center max-w-7xl mt-3 mx-auto ">
+        {/* <div className="w-full fixed inset-0 z-5 justify-between items-center max-w-7xl mt-3 mx-auto ">
           <Link
             to="/"
             className="flex items-center gap-2"
@@ -109,7 +111,8 @@ const Works = () => {
               <span className="sm:block hidden"> | fevinBiju</span>
             </p>
           </Link>
-        </div>
+        </div> */}
+        <NavbarProject />
         <div className="w-full flex justify-center items-center mt-8">
           <h2 className={`${styles.sectionHeadText}`}>My Works</h2>
         </div>
