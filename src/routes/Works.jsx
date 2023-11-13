@@ -6,9 +6,7 @@ import { github } from "../assets";
 import { Link } from "react-router-dom";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
-import { logo } from "../assets";
-import projectNavbar from "../components/NavbarProjects";
-import { Navbar, StarsCanvas } from "../components";
+import { StarsCanvas } from "../components";
 import NavbarProject from "../components/NavbarProjects";
 
 const truncateDescription = (description) => {
@@ -26,6 +24,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  id,
 }) => {
   const truncatedDescription = truncateDescription(description);
   return (
@@ -66,10 +65,10 @@ const ProjectCard = ({
           </p>
           {description.length > 25 && (
             <Link
-              to={`/ProjectDetails/${project.id}`}
-              className="text-blue-500 mt-2 text-secondary text-[14px] "
+              to={`/ProjectDetails/${id}`}
+              className="text-red-500 mt-2 text-secondary text-[14px] "
             >
-              click the card to Know More
+              Read More ...
             </Link>
           )}
         </div>
@@ -96,22 +95,7 @@ const Works = () => {
         <div className="absolute inset-0 z-0">
           <StarsCanvas />
         </div>
-        {/* <div className="w-full fixed inset-0 z-5 justify-between items-center max-w-7xl mt-3 mx-auto ">
-          <Link
-            to="/"
-            className="flex items-center gap-2"
-            onClick={() => {
-              setActive("");
-              window.scrollTo(0, 0);
-            }}
-          >
-            <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-            <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-              fevin &nbsp;
-              <span className="sm:block hidden"> | fevinBiju</span>
-            </p>
-          </Link>
-        </div> */}
+
         <NavbarProject />
         <div className="w-full flex justify-center items-center mt-8">
           <h2 className={`${styles.sectionHeadText}`}>My Works</h2>
@@ -135,8 +119,6 @@ const Works = () => {
         <div className="mt-20 flex  items-center flex-wrap gap-5">
           {projects.map((project, index) => (
             <div key={`project-${index}`}>
-              <p>Project ID: {project.id}</p>
-              {console.log(`/ProjectDetails/${project.id}`)}
               <Link
                 to={`/ProjectDetails/${project.id}`}
                 className="text-decoration-none"

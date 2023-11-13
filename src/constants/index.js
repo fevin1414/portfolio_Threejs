@@ -154,14 +154,14 @@ const projects = [
     id: 1,
     name: "Movies Freak",
     description:
-      "A website running on php and phpMyadmin and styled using bootstrap. Created this website as part of my seond semester accademic project. The website has all the basic CRUD functionalities(Create,Read,Delete,Update), a email and password login system,user role identification and an admin dashboard. The application can identify the logged in user and redirect to the page accordingly . There are total of three kinds of user guest,registered user and admins, The registered users can sort the movies list,search for movies and comment on each movies whereas an guest user can only view the data. ANd for admins they can do all the things that an registered user can do along with CRUD functionalities and can moderate the comments. There is also an API implemented which will from time to time fetch quotes from various movies on the home screen and also a email sending featre inorder to reset password which is done using mailjet.",
+      "A website running on php and phpMyadmin and styled using bootstrap. Created this website as part of my seond semester accademic project. The website has all the basic CRUD functionalities(Create,Read,Delete,Update), a email and password login system,user role identification and an admin dashboard. The application can identify the logged in user and redirect to the page accordingly . There are total of three kinds of user guest,registered user and admins, The registered users can sort the movies list,search for movies and comment on each movies whereas an guest user can only view the data. And for admins they can do all the things that an registered user can do along with CRUD functionalities and can moderate the comments. There is also an API implemented which will from time to time fetch quotes from various movies on the home screen and also a email sending featre inorder to reset password which is done using mailjet.",
     tags: [
       {
         name: "php",
         color: "blue-text-gradient",
       },
       {
-        name: "phpMyadnin",
+        name: "phpMyadmin",
         color: "green-text-gradient",
       },
       {
