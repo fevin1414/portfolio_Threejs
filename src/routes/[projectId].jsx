@@ -31,7 +31,8 @@ const ProjectDetails = () => {
 
       <div className="container mx-auto mt-2">
         <div className="bg-bg-primary p-8 rounded-lg shadow-md text-center relative">
-          <div className="bg-white rounded-sm p-4 mx-auto w-full h-full flex items-center justify-center">
+          <div className="bg-primary rounded-sm p-4 mx-auto w-full h-full flex items-center justify-center ring ring-blue-500 ring-offset-4">
+            {/* Apply glowing effect to the image */}
             <img
               src={project.image}
               alt={project.name}

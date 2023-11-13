@@ -174,6 +174,10 @@ const projects = [
       },
     ],
     image: carrent,
+    image2: carrent,
+    image3: carrent,
+    image4: carrent,
+
     source_code_link: "https://github.com/",
   },
   {
@@ -194,7 +198,11 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: carrent,
+    image2: carrent,
+    image3: carrent,
+    image4: carrent,
+
     source_code_link: "https://github.com/",
   },
   {
@@ -215,7 +223,10 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: jobit,
+    image2: carrent,
+    image3: carrent,
+    image4: carrent,
   },
 ];
 
