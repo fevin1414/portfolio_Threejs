@@ -66,10 +66,10 @@ const ProjectCard = ({
           </p>
           {description.length > 25 && (
             <Link
-              to={`/Myworks`}
+              to={`/ProjectDetails/${project.id}`}
               className="text-blue-500 mt-2 text-secondary text-[14px] "
             >
-              Know More
+              click the card to Know More
             </Link>
           )}
         </div>
@@ -134,7 +134,16 @@ const Works = () => {
       <div className="w-full flex justify-center items-center">
         <div className="mt-20 flex  items-center flex-wrap gap-5">
           {projects.map((project, index) => (
-            <ProjectCard key={`project-${index}`} index={index} {...project} />
+            <div key={`project-${index}`}>
+              <p>Project ID: {project.id}</p>
+              {console.log(`/ProjectDetails/${project.id}`)}
+              <Link
+                to={`/ProjectDetails/${project.id}`}
+                className="text-decoration-none"
+              >
+                <ProjectCard index={index} {...project} />
+              </Link>
+            </div>
           ))}
         </div>
       </div>
