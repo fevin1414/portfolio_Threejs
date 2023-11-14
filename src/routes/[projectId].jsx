@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { StarsCanvas } from "../components";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
+import ComputersCanvas from "../components/canvas/Computers";
 
 const ProjectDetails = () => {
   const { projectId } = useParams();
@@ -24,21 +25,17 @@ const ProjectDetails = () => {
         </div>
 
         <NavbarProject />
-        <div className="w-full flex justify-center items-center mt-8">
+        <div className="w-full flex justify-center items-center mt-30">
+          {" "}
           <h2 className={`${styles.sectionHeadText}`}>My Works</h2>
         </div>
       </motion.div>
 
-      <div className="container mx-auto mt-2">
+      <ComputersCanvas />
+      <div className="container mx-auto mt-8">
+        {" "}
+        {/* Increased margin top */}
         <div className="bg-bg-primary p-8 rounded-lg shadow-md text-center relative">
-          <div className="bg-primary rounded-sm p-4 mx-auto w-full h-full flex items-center justify-center ring ring-blue-500 ring-offset-4">
-            {/* Apply glowing effect to the image */}
-            <img
-              src={project.image}
-              alt={project.name}
-              className="rounded-lg shadow-md max-w-64 max-h-64 mb-4 sm:mb-10 relative bottom-1/2 transform translate-y-1/2"
-            />
-          </div>
           <h2 className="text-3xl mt-8 sm:mt-20 font-bold mb-4">
             {project.name}
           </h2>
